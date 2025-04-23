@@ -6,8 +6,10 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <div class="row">
       <div class="col-md-4 col-12 logo">
+        <RouterLink class="no-link" to="/">
         <h1>FallaSee</h1>
         <h3>Logical Fallacies<br> Detection</h3>
+        </RouterLink>
       </div>
       <div class="col-md-8 col-12">
         <nav>

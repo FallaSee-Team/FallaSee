@@ -54,7 +54,7 @@ import FallacyShort from '../components/FallacyShort.vue'
             <div class="col-2">Probability</div>
           </div>
           <div class="table content" v-for="(value, key) in list">
-            <div class="col-5">{{value.sentence}}</div>
+            <div class="col-5 padding">{{value.sentence}}</div>
             <div class="col-3 listFallacy" :class="value.fallacy"><span></span>{{value.label}}</div>
             <div class="col-2">{{value.confidence}}</div>
             <div class="col-2">{{value.proba}}</div>
