@@ -6,6 +6,7 @@ from datetime import timedelta
 import numpy as np
 import torch
 import mlflow.pytorch
+from transformers import AutoModelForSequenceClassification
 
 from modeling.basic_functions import (
     tokenize,
@@ -39,7 +40,9 @@ CORS(app, resources={
 
 
 def get_tokenized_text(txt):
-    x_tokenized = tokenize(txt, "microsoft/deberta-v3-base")
+    # x_tokenized = tokenize(txt, "microsoft/deberta-v3-base")
+    x_tokenized = tokenize(txt, "kathixx/fallacy-deberta-model")
+    # x_tokenized = tokenize(txt, "marbor/FallaSee")
     return x_tokenized
 
 def predict(model, encodings, batch_size=8):
@@ -109,6 +112,10 @@ def after_request(response):
 @cross_origin(origin='http://localhost:5173')
 def input_predict_text():
     model = mlflow.pytorch.load_model('./models/deberta_v3_multi_with_none_large_3_epochs/pytorch_model')
+    # model = AutoModelForSequenceClassification.from_pretrained("marbor/FallaSee")
+
+    model = AutoModelForSequenceClassification.from_pretrained("kathixx/fallacy-deberta-model")
+
     #get input
     txt = request.get_json()['txt']
     tokenized_txt = get_tokenized_text(txt)
