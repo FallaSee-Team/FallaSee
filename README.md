@@ -96,7 +96,7 @@ _in your backend folder, in different terminal tabs_
 **1. Flask App:**
 ```bash
 source .venv/bin/activate
-python app.py # should run on http://127.0.0.1:5000
+python app.py # should run on http://127.0.0.1:5002
 ```
 
 **2. for training: MLFlow:**
