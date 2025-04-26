@@ -127,7 +127,7 @@ export default {
     },
     getPrediction (data) {
       console.log('predict!')
-      // await axios.get('http://localhost:5000/predict').then(
+      // await axios.get('http://localhost:5002/predict').then(
       //   result => {
           console.log("get Prediction:", data)
           this.resultList = []
@@ -225,7 +225,7 @@ export default {
       this.predictionReady = false
       this.sentence_to_predict = this.sentence
       // this.setFallacyToLocalStorage(this.fallacy)
-      await axios.post('http://localhost:5000/predict',
+      await axios.post('http://localhost:5002/predict',
         { txt: this.sentence }, 
       )
       .then(res => {

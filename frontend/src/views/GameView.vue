@@ -148,7 +148,7 @@ export default {
       let random = Math.floor(Math.random() *data.game.length);
       this.txt = data.game[random].example
       this.solution = data.game[random].label
-      await axios.post('http://localhost:5000/predict',
+      await axios.post('http://localhost:5002/predict',
         { txt: this.txt }, 
       )
       .then(res => {
