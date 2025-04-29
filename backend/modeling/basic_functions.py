@@ -144,7 +144,7 @@ def createTrainer(
     ):
     logging.info('defining training arguments')
     training_args = TrainingArguments(
-            output_dir=output_dir, # to sve results
+            output_dir=output_dir, # to save results and checkpoints
             num_train_epochs=epochs,
             per_device_train_batch_size=train_batch_size, #small to save memory
             per_device_eval_batch_size=eval_batch_size, #small to save memory
